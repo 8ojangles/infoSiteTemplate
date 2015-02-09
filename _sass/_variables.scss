@@ -1,0 +1,134 @@
+// variables
+
+// font colors
+$pgTitleColor : #fff;
+$color2: #0f0;
+$color3: #00f;
+$color4: #aaf;
+$color5: #faa;
+$color6: #afa;
+
+/* Primary Colors */
+
+$primaryColor1Hex : #2A406D;
+$primaryColor2Hex : #425A8C;
+$primaryColor3Hex : #182A50;
+
+$primaryColor4Hex : #7ab7fa;
+
+/* Complement Colors */
+$complementColor1Hex : #A47E34;
+$complementColor2Hex : #D6AA55;
+$complementColor3Hex : #77581B;
+
+
+/* new Colors */
+
+$headColor1: #7bb8fb;
+$headColor2: #fd6a62;
+$headColor3: #09c3d2;
+$headColor4: #fdc161;
+$headColor5: #5fd7a9;
+
+
+
+/* As hex codes */
+
+.color-primary-0 { color: #2A406D }	/* Main Primary color */
+.color-primary-1 { color: #415A8F }
+.color-primary-2 { color: #425A8C }
+.color-primary-3 { color: #182A50 }
+.color-primary-4 { color: #18294C }
+
+.color-complement-0 { color: #A47E34 }	/* Main Complement color */
+.color-complement-1 { color: #D6AA55 }
+.color-complement-2 { color: #D1A756 }
+.color-complement-3 { color: #77581B }
+.color-complement-4 { color: #72551B }
+
+
+
+/* As RGBa codes */
+
+.rgba-primary-0 { color: rgba( 42, 64,109,1) }	/* Main Primary color */
+.rgba-primary-1 { color: rgba( 65, 90,143,1) }
+.rgba-primary-2 { color: rgba( 66, 90,140,1) }
+.rgba-primary-3 { color: rgba( 24, 42, 80,1) }
+.rgba-primary-4 { color: rgba( 24, 41, 76,1) }
+
+.rgba-complement-0 { color: rgba(164,126, 52,1) }	/* Main Complement color */
+.rgba-complement-1 { color: rgba(214,170, 85,1) }
+.rgba-complement-2 { color: rgba(209,167, 86,1) }
+.rgba-complement-3 { color: rgba(119, 88, 27,1) }
+.rgba-complement-4 { color: rgba(114, 85, 27,1) }
+
+/* gradients */
+
+.dkBlueGrad {
+	background: #2a406d; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJhNDA2ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg4JSIgc3RvcC1jb2xvcj0iIzE4MmE1MCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+background: -moz-linear-gradient(top,  #2a406d 0%, #182a50 88%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2a406d), color-stop(88%,#182a50)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #2a406d 0%,#182a50 88%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #2a406d 0%,#182a50 88%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #2a406d 0%,#182a50 88%); /* IE10+ */
+background: linear-gradient(to bottom,  #2a406d 0%,#182a50 88%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a406d', endColorstr='#182a50',GradientType=0 ); /* IE6-8 */
+}
+
+.ie9 .dkBlueGrad {
+	filter: none;
+}
+
+$size100: 100px;
+$size400: 400px;
+$fontSize1: 1em;
+$centerMargin: 20px auto;
+$largeBorderRad: 25px;
+$mediumBorderRad: 15px;
+$smallBorderRad: 5px;
+
+
+/************************************************************
+Z LAYERS
+************************************************************/
+
+$bottomLayer: 0;
+
+$Layer-1: 10;
+$Layer-2: 20;
+$Layer-3: 30;
+$Layer-4: 40;
+$Layer-5: 50;
+$Layer-6: 60;
+$Layer-7: 70;
+
+$topLayer: 1000;
+
+$ui-layer: 2000;
+$ui-layer-bottom: 2010;
+$ui-layer-middle: 2020;
+$ui-layer-top: 2030;
+
+
+/************************************************************
+LOGO
+************************************************************/
+
+$logoYLength: 80px;
+
+
+/************************************************************
+MENU BUTTON
+************************************************************/
+
+$menuYLength: 60px;
+
+
+
+/************************************************************
+SUBMENU
+************************************************************/
+
+$submenu-XLength: 250px;

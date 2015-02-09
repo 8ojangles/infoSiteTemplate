@@ -1,0 +1,309 @@
+/* Fonts */
+
+/* Monserrat - Font - Regular and Bold */
+
+@font-face {
+  font-family:'montserrat-reg';
+  src:url('../fonts/Montserrat/Montserrat-Regular.ttf');
+}
+
+$montserratReg : 'Montserrat-reg';
+
+@font-face {
+  font-family:'montserrat-bold';
+  src:url('../fonts/Montserrat/Montserrat-Bold.ttf');
+}
+
+$montserratBold : 'Montserrat-bold';
+
+/* Abel - Font - Regular */
+
+@font-face {
+  font-family:'abel-reg';
+  src:url('../fonts/Abel/Abel-Regular.ttf');
+}
+
+$abelReg : 'abel-reg';
+
+/* News Cycle - Font - Regular and Bold */
+
+@font-face {
+  font-family:'newsCycle-reg';
+  src:url('../fonts/News_Cycle/NewsCycle-Regular.ttf');
+}
+
+$newsCycleReg : 'newsCycle-reg';
+
+@font-face {
+  font-family:'newsCycle-bold';
+  src:url('../fonts/News_Cycle/NewsCycle-Bold.ttf');
+}
+
+$newsCycleBold : 'newsCycle-bold';
+
+/* Gudea - Font - Regular, Bold, Italic */
+
+@font-face {
+  font-family:'gudea-reg';
+  src:url('../fonts/Gudea/Gudea-Regular.ttf');
+}
+
+$gudeaReg : 'gudea-reg';
+
+@font-face {
+  font-family:'gudea-bold';
+  src:url('../fonts/Gudea/Gudea-Bold.ttf');
+}
+
+$gudeaBold : 'gudea-bold';
+
+@font-face {
+  font-family:'gudea-italic';
+  src:url('../fonts/Gudea/Gudea-Italic.ttf');
+}
+
+$gudeaItalic : 'gudea-italic';
+
+
+/* Marvel - Font - Regular, Bold, Italic */
+
+@font-face {
+  font-family:'marvel-reg';
+  src:url('../fonts/Marvel/Marvel-Regular.ttf');
+}
+
+$marvelReg : 'marvel-reg';
+
+@font-face {
+  font-family:'marvel-bold';
+  src:url('../fonts/Marvel/Marvel-Bold.ttf');
+}
+
+$marvelBold : 'marvel-bold';
+
+@font-face {
+  font-family:'marvel-italic';
+  src:url('../fonts/Marvel/Marvel-Italic.ttf');
+}
+
+$marvelItalic : 'marvel-italic';
+
+@font-face {
+  font-family:'marvel-boldItalic';
+  src:url('../fonts/Marvel/Marvel-BoldItalic.ttf');
+}
+
+$marvelBoldItalic : 'marvel-boldItalic';
+
+
+
+
+
+@font-face {
+  font-family:'moreThanRegular';
+  src:url('../fonts/morereg1-webfont.eot');
+  src:url('../fonts/morereg1-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/morereg1-webfont.woff') format('woff'),
+    url('../fonts/morereg1-webfont.ttf') format('truetype');
+}
+
+$moreThanRegular : 'moreThanRegular';
+
+@font-face {
+  font-family:'moreThanBold';
+  src:url('../fonts/moretbld-webfont.eot');
+  src:url('../fonts/moretbld-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/moretbld-webfont.woff') format('woff'),
+    url('../fonts/moretbld-webfont.ttf') format('truetype');
+}
+
+$moreThanBold : 'moreThanBold';
+
+@font-face {
+  font-family: 'MoreThanIcons';
+  src: url("../fonts/MoreThanIcons.eot");
+  src: url("../fonts/MoreThanIcons.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/MoreThanIcons.woff") format("woff"),
+       url("../fonts/MoreThanIcons.ttf") format("truetype"),
+       url("../fonts/MoreThanIcons.svg#iconvault") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'MoreThanIcons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+.icon-windscreenicon:before {
+  content: "\e600";
+}
+.icon-vanicon:before {
+  content: "\e601";
+}
+.icon-travelicon:before {
+  content: "\e602";
+}
+.icon-tickicon:before {
+  content: "\e603";
+}
+.icon-studenticon:before {
+  content: "\e604";
+}
+.icon-secureicon:before {
+  content: "\e605";
+}
+.icon-searchicon:before {
+  content: "\e606";
+}
+.icon-refreshicon:before {
+  content: "\e607";
+}
+.icon-protectedNCDicon:before {
+  content: "\e608";
+}
+.icon-printicon:before {
+  content: "\e609";
+}
+.icon-posticon:before {
+  content: "\e60a";
+}
+.icon-phoneicon:before {
+  content: "\e60b";
+}
+.icon-peticon:before {
+  content: "\e60c";
+}
+.icon-personalbelongingsicon:before {
+  content: "\e60d";
+}
+.icon-MTLogoicon:before {
+  content: "\e60e";
+}
+.icon-motorcycleicon:before {
+  content: "\e60f";
+}
+.icon-loginicon:before {
+  content: "\e610";
+}
+.icon-lifeicon:before {
+  content: "\e611";
+}
+.icon-legalservicesicon:before {
+  content: "\e612";
+}
+.icon-landlordicon:before {
+  content: "\e613";
+}
+.icon-incomeprotectionicon:before {
+  content: "\e614";
+}
+.icon-homeicon:before {
+  content: "\e615";
+}
+.icon-headstoneicon:before {
+  content: "\e616";
+}
+.icon-golficon:before {
+  content: "\e617";
+}
+.icon-externallinkicon:before {
+  content: "\e618";
+}
+.icon-emergencyicon:before {
+  content: "\e619";
+}
+.icon-emailicon:before {
+  content: "\e61a";
+}
+.icon-downloadicon:before {
+  content: "\e61b";
+}
+.icon-downicon:before {
+  content: "\e61c";
+}
+.icon-crossicon:before {
+  content: "\e61d";
+}
+.icon-courtesycaricon:before {
+  content: "\e61e";
+}
+.icon-claimicon:before {
+  content: "\e61f";
+}
+.icon-caricon:before {
+  content: "\e620";
+}
+.icon-caravanicon:before {
+  content: "\e621";
+}
+.icon-calendaricon:before {
+  content: "\e622";
+}
+.icon-businessicon:before {
+  content: "\e623";
+}
+.icon-breakdownicon:before {
+  content: "\e624";
+}
+.icon-boaticon:before {
+  content: "\e625";
+}
+.icon-accidenticon:before {
+  content: "\e626";
+}
+
+/************************************************************
+CUSTOM ICONS
+************************************************************/
+
+
+@font-face {
+  font-family: 'iconSet1';
+  src:url('../fonts/customIcons/iconSet1.eot');
+  src:url('../fonts/customIcons/iconSet1.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/customIcons/iconSet1.woff') format('woff'),
+    url('../fonts/customIcons/iconSet1.ttf') format('truetype'),
+    url('../fonts/customIcons/iconSet1.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="iconSet-"], [class*=" iconSet-"] {
+  font-family: 'iconSet1';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconSet-cross:before {
+  content: "\e600";
+}
+
+.iconSet-logo:before {
+  content: "\e601";
+}
+
+.iconSet-menu:before {
+  content: "\e602";
+}
+
+.iconSet-pointer:before {
+  content: "\e603";
+}

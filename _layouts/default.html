@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+{% include headBlock.html %}
+
+<body>
+
+{% include headerBlock.html %}
+
+
+<div class="container contOverride cf">
+	<div class="row cf">
+
+		<div class="threecol cf">
+			{% include sidebarContainer.html %}
+		</div>
+
+		<div class="ninecol last cf">
+			{% include slidesContainer.html %}
+		</div>
+
+	</div>
+</div>
+
+{% include footerBlock.html %}
+
+{% include scriptBlock.html %}
+
+</body>
+
+</html>

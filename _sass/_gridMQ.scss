@@ -1,0 +1,54 @@
+/* ! GRID MEDIA QUERY */
+
+@media only screen and (max-width: 790px) {
+  body {
+    font-size: 16px;
+    -webkit-text-size-adjust: none;
+  }
+  body, .container {
+    @include gridMobile();
+    .row {
+      @include gridMobile();
+      .onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol {
+        width: auto;
+        float: $none;
+        margin: 0;
+        padding: 0;
+      } 
+    }
+  }
+}
+
+@media only screen and (max-width: 583px) {
+
+  body, .container {
+    .row {
+      .twelvecol {
+        padding: 0 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+
+  body {
+    font-size: 16px;
+    -webkit-text-size-adjust: none;
+  }
+  body, .container {
+    @include gridMobile();
+    .row {
+      @include gridMobile();
+      .onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol {
+        width: auto;
+        float: $none;
+        margin: 0;
+        padding: 0 20px;
+      }
+      .twelvecol {
+        padding: 0 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,1075 @@
+		<div class="slidesContainer cf">
+
+<!--///////////////////////////////////////////////////////////////////////
+SLIDE 1
+///////////////////////////////////////////////////////////////////////-->
+			<section id="slide1" class="fullWidth contentSlide off">
+				<section id="summaryBlock" class="contentBlock">
+					
+					<h2 id="summaryContentTitle" class="off">Summary</h2>
+
+					<p>This guide is for developers to maintain a standard of coding across projects and as a repositiory for best practise snippets we all find. By having an agreed set of standards we will be able to read, support and transfer code across our team, minimising delays caused by translating different coding styles.</p>
+
+
+					<h3 class="subHeading" id="references">References</h3>
+					<p>Whilst some programming languages enforce strict syntax and language rules, most web-based languages are loose enough for programmers to adopt differing styles within the syntax and still create working code. Borrowing from stricter languages we will adopt a style advocated through code checking tools such as JS Lint or CSS Lint. Although many rules will allow subjective interpretation (such as commenting and line spacing), it would be advisable for all to follow the formatting of major syntax constructs (functions or loops, for example).</p>
+
+
+					<h3 class="subHeading" id="applications">Applications</h3>
+					<p>The text-editor is the application of choice for web developers. The author uses Sublime Text(2 and/or 3) and whilst reference may be made to options available in Sublime, these should transfer to most text-editors available.</p>
+
+
+					<h3 class="subHeading" id="formatting">Basic Formatting</h3>
+					<p>Throughout this guide there will be mention of basic formatting rules applied to most if not all styles. One of the main rules is the "tab" space. Sublime Text allows for the "tab" to be set at a number of "spaces". For readability this should be set to "4" spaces, giving obvious spacing to elements nested inside each other:</p>
+					<pre>
+						<code class="language-markup">
+&lt;div class="myClass"&gt;
+	&lt;div class="myOtherClass"&gt;
+		&lt;p&gt;Some text here&lt;p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+						</code>
+					</pre>
+					</p>
+
+
+					<h3 class="subHeading" id="commenting">Commenting</h3>
+					<p>Most, if not all code is minified and compressed during the production phase of the website and futher compressed through G-Zipping of assets. Therefore line-breaks should be used liberally through code to allow it to "breathe", make it more readable and section relevant parts together. Comments should also be used as much as possible to explain code and section parts of code together. The general rule for commenting is "the more, the better", with the caveat that the comments should be descriptive and useful.</p>
+					<pre>
+						<code class="language-css">
+/* layout for helpBox rollover */
+.helpBox {
+	/* helpBox styles */
+}
+/* helpBox title styles */
+.helpBox h3 {
+	/* helpBox title styles */
+}
+						</code>
+					</pre>
+				</section>
+			</section>
+<!--///////////////////////////////////////////////////////////////////////
+END SLIDE 1
+///////////////////////////////////////////////////////////////////////-->
+
+
+
+<!--///////////////////////////////////////////////////////////////////////
+SLIDE 2
+///////////////////////////////////////////////////////////////////////-->
+
+
+			<section id="slide2" class="fullWidth contentSlide off">
+				<section id="htmlBlock" class="contentBlock">
+					
+
+					<h2 id="htmlContentTitle" class="on">HTML</h2>
+
+					<h3 class="subHeading" id="pageset">Page Set-up</h3>
+					<p>When setting up a HTML file current best-practice advises that the CSS files are linked to in the head of the document and javascript at the end of the body tag:</p>
+					<pre>
+						<code class="language-markup">
+&lt;!doctype html&gt;
+&lt;html class="no-js" lang="en"&gt;
+&lt;head&gt;
+	&lt;!-- Meta tags --&gt;
+
+	&lt;!-- Styles --&gt;
+	&lt;link rel="stylesheet" type="text/css" href="css/styles.css" &gt;
+	
+&lt;/head&gt;
+&lt;/body&gt;
+
+&lt;div class="myPage"&gt;
+&lt;/div&gt;
+
+&lt;!-- Javascript --&gt;
+&lt;script type="text/javascript" src="js/jquery.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/scripts.js"&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+						</code>
+					</pre>
+					<h3 class="subHeading" id="boilerplate">Boilerplate</h3>
+					<p>One of the most useful helpers for web developers is the html boilerplate, advocated by Paul Irish. In addition to using Internet Explorer only conditional statements to allow selector targetting, it also includes the HTML5 shim for older browsers and a meta tag for disabling viewport zooming on mobile devices, improving the usability for these users.</p>
+					<pre>
+						<code class="language-markup">
+&lt;!doctype html&gt;
+	&lt;!--[if lt IE 7]&gt;&lt;html class="no-js ie6 oldie" lang="en"&gt;&lt;![endif]--&gt;
+	&lt;!--[if IE 7]&gt;&lt;html class="no-js ie7 oldie" lang="en"&gt;&lt;![endif]--&gt;
+	&lt;!--[if IE 8]&gt;&lt;html class="no-js ie8 oldie" lang="en"&gt;&lt;![endif]--&gt;
+	&lt;!--[if IE 9]&gt;&lt;html class="no-js ie9 oldie" lang="en"&gt;&lt;![endif]--&gt;
+	&lt;!--[if IE 10]&gt;&lt;html class="no-js ie10 oldie" lang="en"&gt;&lt;![endif]--&gt;
+	&lt;!--[if gt IE 10]&gt;&lt;!--&gt;&lt;html class="no-js" lang="en"&gt;&lt;!--&lt;![endif]--&gt;
+&lt;head&gt;
+	&lt;meta charset="utf-8" /&gt;
+	&lt;title&gt;Template Page&lt;/title&gt;
+	&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" &gt;
+	&lt;!-- Styles --&gt;
+	&lt;link rel="stylesheet" type="text/css" href="css/styles.css" &gt;
+	&lt;!-- HTML5 shim, for IE6-8 support of HTML5 elements --&gt;
+	&lt;!--[if lt IE 9]&gt;
+	&lt;script src="http://html5shim.googlecode.com/svn/trunk/html5.js"&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+&lt;/head&gt;
+						</code>
+					</pre>
+					<p>When writing CSS/SASS rules it is easy to override them for specific Internet Explorer versions:</p>
+					<pre>
+						<code class="language-css">
+/* some styles */
+.helpBox {
+	width: 100%;
+	height: 50px;
+}
+/* some IE8 only styles */
+.ie8 .helpBox {
+	width: 300px;
+}
+/* or IE7 */
+.ie7 .helpBox {
+	width: 250px;
+}
+						</code>
+					</pre>
+
+					<h3 class="subHeading" id="htmlnesting">Nesting Elements</h3>
+					<p>Nested elements should be indented by at leats one tab space to highlight the parent child relationship. This makes it easy to see sibling elements in the code. Comments and spacing then lets the code breathe and make it more readable. Commenting should describe sections and also be used to highlight the closing of containing elements. This is useful on long pages where it is not apparent where the containing element starts:</p>
+					<pre>
+						<code class="language-markup">
+&lt;div class="container"&gt;
+
+	&lt;!-- Help module block --&gt;
+	&lt;div class="helpModule"&gt;
+
+		&lt;h2&gt;Help Module&lt;/h2&gt;
+		&lt;p&gt;Help yourself from the options below&lt;/p&gt;
+		&lt;!-- Lines and lines of options --&gt;
+
+	&lt;/div&gt; &lt;!-- close Help module block --&gt;
+
+&lt;/div&gt; &lt;!-- close container --&gt;
+						</code>
+					</pre>
+				</section>
+			</section>
+<!--///////////////////////////////////////////////////////////////////////
+END SLIDE 2
+///////////////////////////////////////////////////////////////////////-->
+
+
+
+<!--///////////////////////////////////////////////////////////////////////
+SLIDE 3
+///////////////////////////////////////////////////////////////////////-->
+
+			<section id="slide3" class="fullWidth contentSlide off">
+
+
+				<section id="cssBlock" class="contentBlock">
+
+					<h2 id="cssContentTitle" class="on">CSS/SASS</h2>
+
+					<h3 class="subHeading" id="cssbasic">Basic Syntax</h3>
+
+					<p>The syntax rules for CSS are reasonably simple allowing for a wide range of coding styles. With that in mind the following shows a basic example of formatting following some guiding principles to allow good readability:</p>
+					<pre>
+						<code class="language-scss">
+.myclass {
+	width: 100%;
+	height: 100%;
+}
+						</code>
+					</pre>
+					<p>The class is declared with a space between the name and the opening curly brace ("{"), each attribute is placed on it's own line inset by a tab with each attribute-value pair separated by one space. The closing brace is placed on it's own line, lined-up with it's rule.</p>
+
+					<h3 class="subHeading" id="cssnesting">SASS/SCSS Nesting</h3>
+
+					<p>When using SASS/SCSS nesting space should be given between the parent element's attributes and the start of the child's rules. The child rules should also be indented by one tab space inside the Parent:</p>
+					<pre>
+						<code class="language-scss">
+.myclass {
+	width: 100%;
+	height: 100%;
+
+	.myChildClass {
+		width: 100%;
+		height: 100%;
+	}
+
+} /* This denotes the end of the Parent Class */
+						</code>
+					</pre>
+					<p>It is good practice to add a comment to the closing brace of the parent element, which is also spaced from it's children by one line. This is especially useful when dealing with long stylesheets where it is not apparent or quickly visible which end brace closes what rule. Where there is more than one child element (including pseudo classes) these should also be separated by a line. In the case of pseudo classes these should appear before any child classes:</p>
+					<pre>
+						<code class="language-scss">
+.myclass {
+	/* myclass rules */
+
+	&:hover {
+		/* myClass pseudo rules */
+	}
+
+	.myChildClass {
+		/* myChildClass rules */
+	}
+
+	.mySecondChildsClass {
+		/* mySecondChildsClass rules */
+	}
+
+} /* This denotes the end of the Parent Class */
+						</code>
+					</pre>
+
+					<h3 class="subHeading" id="cssvariables">Declaring SASS/SCSS Variables</h3>
+
+					<p>Variable declaration should be placed at the top of the main SASS/SCSS file where possible. One technique is to create a "Variables" partial file to be included in the main style sheet, using the "@include" rule. Variables of the same type should be grouped together and separated by commenting, which also gives a description of the variable usage:</p>
+					<pre>
+						<code class="language-scss">
+/* Color Variables */
+$primaryColor: #d6f8e1;
+$secondaryColor: #88cfc3;
+
+/* Main Paragraph Spacing Variables */
+$basicParagraphMargins: 3em 2em;
+$centeredParagraphMargins: 3em auto;
+$basicParagraphPadding: 1em 2em;
+
+/* variables can be declared in a partial
+ to be included in the main SCSS file */
+@import "variablePartial";
+						</code>
+					</pre>
+
+					<h3 class="subHeading" id="cssie">Targetting Internet Explorer</h3>
+
+					<p>Part of current front-end web development is making sites and pages work across browsers, including legacy versions where support is required. Whilst most modern browsers render and act in the same way, legacy versions of Internet Explorer require specific styling overrides which differ even between versions. The HTML boilerplate code allows for a simple method to override previous rules for specific IE versions:</p>
+					<pre>
+						<code class="language-scss">
+.myclass {
+	/* myclass rules */
+	}
+/* overriding for IE7 */
+.ie7 .myclass {
+	/* myclass rules for ie7 */
+	}
+/* overriding for IE8 */
+.ie8 .myclass {
+	/* myclass rules for ie8 */
+	}
+						</code>
+					</pre>
+					<p>Using SASS/SCSS nesting can make this process even simpler, allowing the overriding rules to be placed in their own partial to be imported at the end of the main SASS/SCSS file:</p>
+					<pre>
+						<code class="language-scss">
+/* parent IE7 class */
+	.ie7 {
+	/* nested styles taking the IE7 parent */
+		.myClass {
+			/* myClass styles */
+		}
+		.mySecondClass {
+			/* mySecondClass styles */
+		}
+	}
+/* Compiles to CSS: */
+.ie7 .myClass {
+	/* Styles */
+}
+
+.ie7 .mySecondClass {
+	/* Styles */
+}
+						</code>
+					</pre>
+				</section>
+			</section> <!-- end slide 3 -->
+<!--///////////////////////////////////////////////////////////////////////
+END SLIDE 3
+///////////////////////////////////////////////////////////////////////-->
+
+
+
+<!--///////////////////////////////////////////////////////////////////////
+SLIDE 4
+///////////////////////////////////////////////////////////////////////-->
+
+			<section id="slide4" class="fullWidth contentSlide on">
+
+				<section id="jsBlock" class="contentBlock">
+
+					<h2 id="jsContentTitle" class="on">Javascript &amp; jQuery</h2>
+
+					<h3 class="subHeading" id="jsbasic">Basic Syntax</h3>
+
+					<p>Following on from the guidlines for CSS/SCSS languages, writing Javascript and jQuery should place an emphasis on readability and commenting for enhanced understanding. Care should still be taken when writing standard language constructs such as functions, switches, FOR loops and IF/ELSE statements.</p>
+					<h3 class="subHeading" id="filestructure">File Structure</h3>
+					<p>For optimum page performance all javascript files should be included as script imports at the bottom of the html, before the closing body tag.</p>
+					<pre>
+						<code class="language-markup">
+&lt;!doctype html&gt;
+&lt;html class="no-js" lang="en"&gt;
+&lt;head&gt;
+	&lt;!-- Head contents, Meta tags, stylesheet imports etc... --&gt;	
+&lt;/head&gt;
+&lt;/body&gt;
+	&lt;!-- Page contents --&gt;
+
+&lt;!-- Javascript --&gt;
+&lt;script type="text/javascript" src="js/jquery.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/somePlugIn.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/someOtherPlugIn.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/scripts.js"&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+						</code>
+					</pre>
+					<h3 class="subHeading" id="fileformat">File Format</h3>
+					<p>The "scripts.js" file should contain all custom code, fully commented to denote code blocks relating to a feature, function calls and/or dependancies. The entire file should be wrapped in a "Doc Ready" function to ensure the code is parsed after the HTML and CSS has loaded and rendered.</p>
+					<pre class="language-javascript">
+						<code>
+$&#40;document&#41;.ready&#40;function&#40;&#41;&#123;
+
+	/* Javascript/jQuery code */
+
+&#125;&#41;&#59;
+						</code>
+					</pre>
+					<h3 class="subHeading" id="variables">Variables</h3>
+					<p>Variable declarations can take the following forms:</p>
+					<pre class="language-javascript">
+						<code>
+/* Single variables should be declared with a
+ comment describing their usage */
+
+/* default number of things */
+var myVariable = 10;
+
+/* Spacing should always be given between the 
+variable name, assignment and value. */
+
+/* WRONG */
+var myVariable=10;
+
+/* Multiple, unrelated variables should be declared 
+on their own lines  */
+
+/* default number of other things */
+var myOtherVariable = 20;
+
+/* default number of some more things */
+var myAdditionalVariable = 30;
+
+/* Multiple, related variables should be declared on 
+their own lines, separated by a comma, closing the 
+last with a semi-colon. In this list-style declaration
+only the first variable requires the "var" keyword. */
+
+/* default variables for application */
+var myFirstVariable = "one",
+	mySecondVariable = "two",
+	mythirdVariable = "three";
+
+/* Undeclared variables can be declared in a
+ comma seperated list for future usage */
+
+/* default other variables for application */
+var une, deu, trois;
+
+/* variables can be objects... */
+var myObject = &#123;
+	attribute1: 10,
+	attribute2: "two",
+	attribute3: "c"
+&#125;;
+
+/* ...or functions */
+var myFunction = function(){
+	/* functions block */
+};
+						</code>
+					</pre>
+					<p>Whilst declaring variables is one of the commonest tasks in any coding language, it is the placement of the variable in the code flow that requires the most care, especially when writing javascript. Placing variables outside of a function closure puts the variable in the global scope, meaning that it can be altered intentionally, or unintentionally by other code. The scoping of variables to protect against this will covered in the following sections.</p>
+					<h3 class="subHeading" id="objects">Objects</h3>
+					<p>An object can contain multiple attribute/value pairs. These values can be any of the javascript object types, from strings and numbers to functions. For readability each attribute/value pair should be on it's own line with commenting to aid understanding if not immediately obvious. Functions should be closed on the same column as their attribute.</p>
+
+					<pre class="language-javascript">
+						<code>
+/* object declaration, with each attribute on seperate lines */
+var myObject = &#123;
+	attribute1: 10,
+	attribute2: "two",
+	attribute3: "c",
+	/* functions should have descriptions */
+	attribute4: function(a, b){
+		return a + b;
+	},
+	attribute5: "the end"
+&#125;;
+						</code>
+					</pre>
+					<p>Using objects is one way of encapsulating code, keeping variables and functions from "leaking" into the global scope with only the parent variable visible. Using the above example:</p>
+
+					<pre class="language-javascript">
+						<code>
+/* "getting" variable values from "myObject" */
+
+myObject.attribue1;
+/* returns "10" */
+
+attribue1;
+/* returns "undefined" */
+
+myObject.attribute4(1, 1);
+/* returns "2" */
+
+attribute4(1, 1);
+/* returns "undefined" */
+
+/* Some other code uses the same variable name, 
+possible conflict!! */
+var attribute2 = "I'm global";
+
+attribue2;
+/* returns "I'm global" */
+
+myObject.attribue2;
+/* returns "two", conflict avoided!! */
+						</code>
+					</pre>
+
+					<p>With the the amount of javascript used, from plug-ins and third party code to additions made by team members developers should ensure they use this or other techniques described below, to protect their code from unwanted changes, or visa-versa.</p>
+
+					<h3 class="subHeading" id="functions">Functions</h3>
+
+					<p>There are various methods of declaring functions in javascript, falling into either expressions or declaration statement forms.</p>
+
+					<pre class="language-javascript">
+						<code>
+/* anonymous function expression, note the spacing
+between the comma-seperated parameters (a, b) and
+the opening curley brace */
+function(a, b) {
+	return a + b;
+}
+
+/* function expressions are only useful if part of
+a larger expression or immediately invoked */
+
+/* function expressions assigned to a variable */
+var myAddingFunction = function(a, b) {
+	return a + b;
+}
+
+/* invoking the function */
+myAddingFunction(1, 2);
+/* returns "3" */
+
+/* using the "immediate invocation" format to execute
+the function. Note the second pair of parentheses
+containing the required parameters to be computed by
+the enclosed function */
+(function(a, b) {
+	return a + b;
+})(1,2);
+/* returns "3" */
+						</code>
+					</pre>
+					<p>The "immediate invocation" format described above is another way to "encapsulate" or create a "closure".</p>
+
+					<pre class="language-javascript">
+						<code>
+/* Code inside the "immediate invocation" is protected
+from the global scope */
+
+/* Define global variable */
+var thisVar = 3;
+
+/* check assignment */
+console.log(thisVar);
+/* returns "3" */
+
+/* declare a function for "immediate invocation" */
+(function(){
+	/* Define local variable */
+	var thisVar = 5;
+	/* check assignment */
+	console.log(thisVar);
+	/* returns "5" */
+})();
+
+/* check that the assignment has not been conflicted
+and the encapsulation has worked */
+console.log(thisVar);
+/* returns "3" */
+						</code>
+					</pre>
+					<p>Function declaration statements are different not only in format and are required to be "named" but also in the way the function is parsed and executed at runtime. Using this format creates "hoisting", the result of which is that the function can be invoked before it has been declared in the code. This can be a benefit in some situations.</p>
+
+					<pre class="language-javascript">
+						<code>
+/* Declaring the function statement */
+
+/* compute the distance between two points in 2D space */
+function distance(x1, y1, x2, y2) {
+	var dx = x2 - x1;
+	var dy = y2 - y1;
+	return Math.sqrt(dx*dx + dy*dy);
+}
+
+/* using the function */
+distance(100, 200, 200, 400);
+/* returns 223.60679774997897 */
+						</code>
+					</pre>
+					<p>Function statements that are "hoisted" can be useful in seperating the working parts of the code with their actual implimentation.</p>
+					<pre class="language-javascript">
+						<code>
+/* Using the function before it is declared */
+
+distance(100, 200, 200, 400);
+/* returns 223.60679774997897 */
+
+/*
+...
+many lines of other code
+...
+ */
+
+/* Declaring the function */
+function distance(x1, y1, x2, y2) {
+	var dx = x2 - x1;
+	var dy = y2 - y1;
+	return Math.sqrt(dx*dx + dy*dy);
+}
+						</code>
+					</pre>
+					<p>The full extent of "hoisting" is beyond the scope of this document so it is advisable for developers to research this, along with "function scope" to understand how to use it to their advantage, or mitigate its effects.</p>
+					<p>Nesting within functions should indent following the heirachy within the code block. Line breaks should be given within the code block to help denote the start of nested functions, commenting to describe the function's actions and usage.</p>
+					<pre class="language-javascript">
+						<code>
+/* Declaring the outer function */
+function myNestedFunction(param1, param2) {
+
+	/* First level items are indented by one level */
+	/* Declare variables available throughout the function */
+	var firstResult,
+		secondResult,
+		returnValue;
+
+	/* make the first computation */
+	firstResult = param1 + param2;
+
+	/* declare a nested function */
+	function someComputation(firstResult) {
+
+		/* Second level items are indented by
+		two levels, third level items by three levels etc... */
+
+		/* Code Block */
+
+	/* function is closed off at it's
+		indentation level */
+	}
+
+	someComputation();
+	
+/* the parent function is closed off with an
+identifying comment. This is especially useful
+with long and/or nested functions */
+} /*  close myNestedFunction */
+
+/* using the function */
+myNestedFunction(20, 60);
+/* returns something or other */
+						</code>
+					</pre>
+					<h3 class="subHeading" id="ifelse">If/Else Statements</h3>
+					<p>Conditional statements must be treated with special care in javascript. The priority (other than actual working code) should be for readability and understanding of the logic.</p>
+					<pre class="language-javascript">
+						<code>
+/* Declare some variables for testing on */
+var firstVar = "10",
+	secondVar = 20;
+
+/* Standard IF statement  */
+
+/* Space should be given between the conditional's parentheses
+followed by a space to the opening curley brace. Line spaces
+can be given inside the code block but the closing curley
+brace should appear on it's own line */
+if ( firstVar > 1 ) {
+
+	/* "do something" code block indented by one line */
+
+}
+
+/* IF/ELSE statement - this is ok */
+
+if ( firstVar > 1 ) {
+
+	/* "do something" code block indented by one line */
+
+} else {
+
+	/* "do something else" code block indented by one line */
+
+} /* the closing brace of the if/else statement should
+be denoted by a comment */
+
+/* this is also ok */
+
+if ( firstVar > 1 ) {
+	/* "do something" */
+} else {
+	/* "do something else" */
+}
+
+
+/* The IF/ELSE IF statement is similar in format to the
+IF/ELSE statement with the ELSE IF condition on the
+same line */
+
+/* check variables for number (or a properly explained
+introduction) IF/ELSE IF statement */
+if ( firstVar > 1 ) {
+
+	/* "do something" */
+
+} else if ( secondVar < 100 ) {
+
+	/* "do something else" */
+
+} else if ( secondVar > 100 ) {
+
+	/* "do something other thing" */
+
+} else {
+
+	/* "a default action perhaps" */
+
+} /* close check variables for number IF/ELSE */
+						</code>
+					</pre>
+					<p>In the case of a simple IF/ELSE statement it can be useful, for the sake of space, to use a ternary operator but should be commented as it is not an immediately obvious operation in comparison to an If/ELSE.</p>
+					<pre class="language-javascript">
+						<code>
+/* This... */
+return val ? foo() : bar();
+
+/* ...is the same as... */
+if (val) {
+ 	return foo();
+} else {
+ 	return bar();
+}
+
+/* Assigning a ternary to a variable */
+var myLogic = mayVar >= 10 ? trueResult() : falseResult();
+						</code>
+					</pre>
+
+					<p>Nested IF/ELSE statements are a common way to construct logic trees in code. From the standpoint of maintainance and debugging it can be confusing when the logic goes many levels deep. A SWITCH statement may be more appropriate depending on the situation.</p>
+
+					<pre class="language-javascript">
+						<code>
+/* Nesting IF/ELSE statements. Comments and noting
+closing tags becomes vital as the logic grows in complexity */
+if (val) {
+ 	
+	if (val2) {
+		/* do something */
+	} else {
+		/* do something else */
+	} /* Close inner VAL2 check */
+
+} else {
+ 	
+ 	if (val3) {
+ 		/* do another thing */
+	} else {
+		/* ...or this */
+	} /* Close inner VAL3 check */
+
+} /* Close main VAL check IF/ELSE */
+
+
+/* Multiple nested IF/ELSE statements presents a
+ huge danger in debugging and comprehension and
+ should be avoided where possible. A SWITCH might be
+ a better option */
+if (val) {
+	if (val2) {
+		if (val4) {
+			if (val6) {
+				/* sort of know whats going on here... */
+			} else {
+				if (val8) {
+					/* and kind of here... */
+				} else {
+					/* not sure here... */
+				}
+			}
+		} else {
+			if (val7) {
+				/* or here... */
+			} else {
+				/* maybe this is true, true, false... */
+			}
+		}
+	} else {
+		/* what now... */
+	}
+} else {
+ 	if (val3) {
+ 		/* arrrgh... */
+	} else {
+		/* ...or this */
+	}
+} /* Close main VAL check IF/ELSE */
+						</code>
+					</pre>
+					<h3 class="subHeading" id="switch">SWITCH Staments</h3>
+					<p>The SWITCH statement is a useful construct when there are multiple paths from a conditional check. As mentioned before the use of a SWITCH should be considered when an IF/ELSE becomes unwieldy from a maintainance or logic viewpoint. SWITCHs often provide the basis of "finite state machines".</p>
+						
+					<p>The standard declaration should be formatted like a function, with the SWITCH keyword, followed by a space, parentheses contining the condition, space, then curley brace opening the code block. Each "case" (or conditional outcome) should should appear on it's own line indented by one level. The resulting code block appears on its own line and indented again, followed by the "break" keyword, again on its own line.</p>
+
+					<p>The use of a "default" case is optional depending on circumstance. The use of empty new lines between cases is optional, although it can be useful for readability especially with many cases. The closing Brace should be on its own line, aligned with the original SWITCH keyword.</p>
+
+					<pre class="language-javascript">
+						<code>
+/* A hypotheticl variable */
+var myVar = 10;
+/* The standard SWITCH format */
+switch (myVar) {
+
+	case 1:
+		/* if myVar is 1 do this */
+		someFunction1();
+		break;
+
+	case 5:
+		/* if myVar is 5 do this */
+		someFunction2();
+		break;
+
+	case 10:
+		/* if myVar is 10 do this */
+		someFunction3();
+		break;
+
+	case 20:
+		/* if myVar is 20 do this */
+		someFunction4();
+		break;
+
+	default:
+		/* if myVar is none of these do this */
+		defaultFunction1();
+		break;
+
+}
+
+/* Always include the BREAK at the end of each
+case otherwise any following code will execute. Although
+this can be an intended behavior it is unwise to rely on
+it in production */
+
+var myVar = 10;
+
+switch (myVar) {
+	case 1:
+		/* wont execute */
+	case 5:
+		/* wont execute */
+	case 10:
+		/* WILL execute */
+	case 20:
+		/* and then this WILL execute */
+	case 30:
+		/* and this */
+	default:
+		/* if myVar is none of these do this */
+		break;
+}
+						</code>
+					</pre>
+
+					<h3 class="subHeading" id="for">FOR loops</h3>
+					<p>The FOR loop is constructed with an initialiser, test and an incrimenter.</p>
+
+					<pre class="language-javascript">
+						<code>
+/* the format should read: */
+for(initialiser; test; incrimenter) {
+	/* looping code block */
+}			
+
+/* the following statement reads: i equals 0,
+while i is less than 10 execute code block then
+add 1 to i. By declaring i as a var i is initialised for
+each FOR loop */
+for(var i = 0; i < 10; i++) {
+	/* looping code block */
+}
+						</code>
+					</pre>
+					<p>As the standard notation this will be the format used most commonly. It is possible to alter the format, declaring 2 initialisers for example or having a dynamic test:</p>
+
+					<pre class="language-javascript">
+						<code>
+/* declare an array for manipulation */
+var myArray = [10, 20, 30, 40, 50];
+
+/*  the length of the array minus 1 (as i starts
+at 0) as the test part of the declaration */
+for(var i = 0; i < myArray.length - 1; i++) {
+	/* will run 5 times */ 
+}
+						</code>
+					</pre>
+					<p>There are a number of strategies that can be employed to increase the performance of FOR loops, epsecially when the number of loops in unknown or a particularly high number. The first involves caching variables to stop the computation within the FOR declaration block. Another is to run the loop backwards so the test checks against zero instead of some variable number.</p>
+
+					<pre class="language-javascript">
+						<code>
+/* using the array from the example above */
+
+/* declare the intialiser */
+var i;
+/* declare the test so it doesn't compute every loop */
+var loopLen = myArray.length - 1;
+
+for(i = 0; i < loopLen; i++) {
+	/* looping code block */ 
+}
+
+/* running the loop backwards */
+for(i = loopLen; i > 0; i--) {
+	/* looping code block */ 
+}
+						</code>
+					</pre>
+					<p>The best strategy for performance is the assess whether a loop is actually neccessary. Small loops could be unravelled where appropriate, removing the loop computations.</p>
+
+					<pre class="language-javascript">
+						<code>
+/* the example array above only has 5 members. If you
+know this wont change... */
+
+/* ...this */
+var i;
+var loopLen = myArray.length - 1;
+for(i = 0; i < loopLen; i++) {
+	/* looping code block */ 
+}
+
+/* could become this...*/
+myArray[0].doSomething();
+myArray[1].doSomething();
+myArray[2].doSomething();
+myArray[3].doSomething();
+myArray[4].doSomething();
+/* ...without the computation associated with
+ each loop */
+						</code>
+					</pre>
+					<h3 class="subHeading" id="while">WHILE loops</h3>
+					<p>Similar to FOR loops the WHILE loop runs while a condition is true. the format for writing WHILE loops is simpler than the FOR loop. This does open up the possibility of accidentally wring an infinite loop.
+					The format for a WHILE loop is:</p>
+					<pre class="language-javascript">
+						<code>
+/* WHILE loop syntax and format */
+while (expression) {
+	/* statement block */
+}
+
+/* example loop */
+var i = 0;
+while ( i < 100 ) {
+	doThis();
+	i++;
+}
+
+/* always check that your conditions can change,
+otherwise you may end up with an infinite loop */
+
+/* example infinite loop */
+var i = 1;
+while ( i > 0 ) {
+	doThis();
+	i++;
+}
+						</code>
+					</pre>
+
+					<p>Link the FOR loop there is much information about how to optimise the WHILE loop, running it in reverse for example, as the zero check is much faster than a check against a number. Even tighter strategies are possible so it is advisable for the developer to research the why's and how's of loops to make their code as efficient as they can.</p>
+
+					<pre class="language-javascript">
+						<code>
+/* reverse WHILE loop */
+var i = 100;
+while ( i > 0 ) {
+	doThis();
+	i--;
+}
+						</code>
+					</pre>
+
+					<h3 class="subHeading" id="with">WITH statement</h3>
+					<p>The WITH statement has been deprecated and won't be used by developers using modern techniques. The general concensus is DO NOT USE. There are a number of performance problems associated to the WITH statement.</p>
+					<p>The WITH statement extends the scope chain of the identifier.; The following example uses a form lookup, and below that the modern, easier to optimise way:</p>
+
+					<pre class="language-javascript">
+						<code>
+/* WITH statement */
+with( document.forms[0] ) {
+	/* access the form elements directly here. eg. */
+	name.value = "";
+	address.value = "";
+	email.value = "";
+}
+
+/* should now be dealt with via a variable assignment */
+var myForm = document.forms[0];
+myForm.name.value = "";
+myForm.address.value = "";
+myForm.email.value = "";
+						</code>
+					</pre>
+
+					<h3 class="subHeading" id="jquery">jQuery</h3>
+					<p>Javascript may be regarded as the language of the web, but the release of jQuery signalled a seizemic shockwave around the internet and brought it to life. It cannot be stressed how much jQuery has changed web-development, especially at the front-end. From the sizzle selector engine making dom manipulation a basic task, to the unifying of methods and functions across browsers to make life so much easier, jQuery has sped up web-development by many magnitudes.</p>
+
+					<pre class="language-javascript">
+						<code>
+/* find a "div" with a class of "leftColumn" */
+var leftCol = $('.leftColumn');
+
+/* find all the "divs" with a class of "leftColumnBox" */
+var leftColBox = $('.leftColumnBoxes');
+
+/* pick the first "leftColumnBox" and add a class of "active" */
+leftColBox.eq(0).addClass('active');
+
+/* pick the first "leftColumnBox" and add a class of "active",
+add a class of "inactive" to the other "leftColumnBox"s */
+leftColBox.addClass('inactive');
+leftColBox.eq(0).removeClass('inactive').addClass('active');
+
+/* add a class of "activecolumn" to their parent, showing
+ the method chain on their own new lines. Both styles are acceptable
+ with the newline style being more readable in long method chains */
+leftColBox.eq(0)
+	.parent()
+	.removeClass('inactiveColumn')
+	.addClass('activecolumn')
+	.end()
+	.css('background', '#f00');
+
+/* create a button from a DIV with class "myButton" */
+$('.myButton').click(function(event) {
+	/* the buttons event in here */
+	doSomethingWizzy();
+});
+						</code>
+					</pre>
+				</section>
+			</section>
+<!--///////////////////////////////////////////////////////////////////////
+END SLIDE 4
+///////////////////////////////////////////////////////////////////////-->
+
+
+
+<!--///////////////////////////////////////////////////////////////////////
+SLIDE 5
+///////////////////////////////////////////////////////////////////////-->
+			<section id="slide5" class="fullWidth contentSlide off">
+				<section id="qaBlock" class="contentBlock">
+					
+					<h2 id="qaContentTitle" class="on">Quality Assurance</h2>
+
+					<p>The process of Quality Assurance takes may forms, from testing during builds, online tools for code validation, peer review, unit testing and testing the code through the various environments before the final push into production. All these are in place to ensure that the final code is as error free as possible.</p>
+
+					<h3 class="subHeading" id="git">GIT</h3>
+					<p>A GIT based repository system is used as the primary version control and continuous development tool. Developers link to their repositories through GIT client software such as "SourceTree".</p>
+
+					<p>In the standard process a MASTER repository acts as the main and current version of the site/application. This is then cloned a number of times to create versions used in the various environments.</p>
+
+					<p>A full explaination of the GIT model used can be found here: <a href="https://rsaebusiness.atlassian.net/wiki/display/DEV/Git+Version+Control" target="_blank" title="opens in a new window">GIT version control</a></p>
+
+					<h3 class="subHeading" id="peerreview">Peer Review</h3>
+
+					<p>Initial quality and sense checks are undertaken in the Peer Review process. Code is reviewed by a senior developer and/or one other developer to make sure there is adhearence to guidelines and best practice. Any inital problems can be highlighted and code rewritten before commiting to the development repositiory and entrance to the testing phase. This is also an opportunity for design and UX departments to review the feature/site/application to suggest changes.</p>
+
+					<h3 class="subHeading" id="browsertesting">Browser Testing</h3>
+
+					<p>All sites or projects will have an agreed list of supported browsers and devices. These form the basis of the test strategy (especially on front-end tasks). Multiple rounds of independant testing and retesting ensure that the finished site/application conforms to the requirements/specification created for the build process. All disciplines (design, UX, business partners) are involved in this process. Bugs are submitted to the task tracker/management tool (currently JIRA) to audit work, fixes and completion.</p>
+
+					<h3 class="subHeading" id="performance">Performance</h3>
+
+					<p>During the build and testing processes developers actively test and analyse the performance of features and sites being built. Performance is tracked on a variety of criteria:</p>
+					<p>
+						<ul>
+							<li>Page Weight: in kilobytes.</li>
+							<li>Page Load Speed: across a number of delivery networks (3G, 4G, broadband connections).</li>
+							<li>UI responsiveness and smoothness of transitions.</li>
+							<li>UI blocking from scripts.</li>
+							<li>Data calls to, and response times from the back end.</li>
+						</ul>
+					</p>
+
+					<h3 class="subHeading" id="onlinetools">Online Tools</h3>
+
+					<p>A number of tools are available to developers to monitor and test their code and sites/applications.</p>
+					<p>To highlight syntax or formatting errors code can be run through the following code checkers (linters):</p>
+					<p>
+						<ul>
+							<li>CSSLint: <a href="http://csslint.net/">http://csslint.net/</a></li>
+							<li>JSLint: <a href="http://www.jslint.com/">http://www.jslint.com/</a></li>
+							<li>PyLint: <a href="http://www.pylint.org/">http://www.pylint.org/</a></li>
+						</ul>
+					</p>
+					<p>Developers should also use tools available in the browser, most of which have in-built developer tools and performance analysis.</p>
+
+					<h3 class="subHeading" id="unittesting">Unit Testing</h3>
+
+					<p>Unit testing provides an automated and reproduceable test strategy for developers to ensure the features are aligned with the specification of features and applications. It is generally beneficial to create unit tests before any build starts to chart the functionality of features and required outcomes.</p>
+					<p>For front-end testing developers should look at Phantomjs, Casperjs and Selenium. Aligning with the current frameworks and technologies used on the back-end, Django unit testing. New products should ideally have fully crafted frameworks integrated into the Continuous integration environments for automated reporting from code deployments.</p>
+
+					<h3 class="subHeading" id="environments">Environments</h3>
+
+					<p>Utilising GIT and Continuous Integration technologies a full stack of environments are utilised for every stage of the development cycle. These include (but not limited to):</p>
+					<p>
+						<ul>
+							<li>Virtual environments for builds</li>
+							<li>Development environment for testing</li>
+							<li>UAT environment for further testing and sign-off</li>
+							<li>Pre-production environment for deployment testing</li>
+							<li>Live environment</li>
+						</ul>
+					</p>
+
+					<h3 class="subHeading" id="signoff">Sign Off</h3>
+
+					<p>A written sign-off is required from all disciplines involved in the development cycle before a feature, site or application is released to Live. This can take the form of emails from respective parties but all will be logged in JIRA for auditing.</p>
+
+					<h3 class="subHeading" id="release">Release</h3>
+
+					<p>The release schedule is handled by the Release team and development Operations (Dev Ops) team. their processes ensure that sprints and features can be tracked from build and testing to pushing into new environments and all allow for rolling back to previous working versions should fatal errors occur in higher environments.</p>
+
+
+				</section>
+			</section>
+<!--///////////////////////////////////////////////////////////////////////
+END SLIDE 5
+///////////////////////////////////////////////////////////////////////-->
+
+		</div>
+<!--///////////////////////////////////////////////////////////////////////
+END SLIDE CONTAINER
+///////////////////////////////////////////////////////////////////////-->
