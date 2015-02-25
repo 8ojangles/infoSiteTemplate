@@ -2,6 +2,60 @@ $(document).ready(function(){
 
 
 
+/******************************************************
+SUBMENU BUILDER
+******************************************************/
+
+/* collect section headings into array */
+
+var submenuHeadingArray = [];
+var sectionSubtitleArray = [];
+
+
+var contentSlides = $('.contentSlide');
+
+var submenuHeadings = $('.contentSlide h2');
+var submenuHeadingLen = submenuHeadings.length -1;
+
+for (var i = 0; i <= submenuHeadingLen; i++) {
+
+	var submenuHeading = submenuHeadings.eq(i).text();
+	submenuHeadingArray.push(submenuHeading);
+
+	var subtitleArray = [];
+	var currSlide = i+1;
+	var subtitleHeadings = $("#slide"+currSlide+" h3");
+	var subtitleHeadingLen = subtitleHeadings.length -1;
+
+	for (var j = 0; j <= subtitleHeadingLen; j++) {
+		var subtitleHeading = subtitleHeadings.eq(j).text();
+		subtitleArray.push(subtitleHeading);
+	}
+
+	sectionSubtitleArray.push(subtitleArray);
+
+}
+
+console.log(submenuHeadingArray);
+console.log(sectionSubtitleArray);
+
+// var subtitleArray = [];
+
+// 	var subtitleHeadings = submenuHeadings.eq(i).find('h3');
+// 	var subtitleHeadingLen = subtitleHeadings.length -1;
+
+// 	for (var i = 0; i <= subtitleHeadingLen; i++) {
+
+// 		var subtitleHeading = subtitleHeadings.eq(i).text();
+// 		subtitleArray.push(subtitleHeading);
+// alert(sectionSubtitleArray);
+
+
+
+
+
+
+
 /********** ANIMATION VARIABLES AND LINKS **********/
 
 /* declare animation timing vars */
@@ -84,15 +138,21 @@ WAYPOINT FUNCTIONS
 
 	var subMenus = $('.subMenu');
 
+	var sidebarContainer = $('.sideBarContainer');
+
 /* smallanize header using "summary" title position */
 
 	summaryH2El.waypoint(function(direction) {
 
 		if (direction == 'down') {
 			headerEl.removeClass('open').addClass('closed');
+			sidebarContainer.removeClass('lowPos highPos').addClass('highPos');
+
+
 		}
 		if (direction == 'up') {
 			headerEl.removeClass('closed').addClass('open');
+			sidebarContainer.removeClass('lowPos highPos').addClass('lowPos');
 		}
 
 	}, { offset: 275 });

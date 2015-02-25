@@ -72,7 +72,9 @@ body {
 	height: 100%;
 }
 
-/********** HEADER Styles **********/
+/************************************************************
+HEADER Styles
+************************************************************/
 
 
 header {
@@ -424,6 +426,15 @@ section {
 	padding-top: 260px;
 	z-index: $ui-layer-bottom;
 
+	&.lowPos {
+		padding-top: 260px;
+		transition: all 0.25s linear;
+	}
+	&.highPos {
+		padding-top: 150px;
+		transition: all 0.25s linear;
+	}
+
 	.subMenuContainer {
 		position: relative;
 		height: auto;
@@ -458,8 +469,6 @@ section {
 				position: relative;
 
 				&.hilite {
-					// padding-left: 15px;
-					// background: $primaryColor2Hex;
 					transition: all 0.2s ease;
 
 					a {
