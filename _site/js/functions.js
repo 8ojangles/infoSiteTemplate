@@ -128,7 +128,7 @@ $('.subMenu li a').click(function(event){
 WAYPOINT FUNCTIONS
 **************************************************************/
 
-	var titleBGClasses = "summaryBg htmlBg cssBg jsBg qaBg";
+	var titleBGClasses = "summaryBg htmlBg cssBg jsBg qaBg refBg";
 	var onOffClasses = "on off";
 	var headerTitles = $('.sectionTitle h3');
 	var headerBgEl = $('.headerBg');
@@ -338,6 +338,46 @@ WAYPOINT FUNCTIONS
 			$('.'+elID).parent().addClass('hilite');
 
 		}, { offset: waypointOffset_subTitles });
+
+
+
+
+	$('#refBlock h2').waypoint(function(direction) {
+
+		if (direction == "down") {
+			subMenus.removeClass('open closed').addClass('closed');
+			$('#refSubMenu').removeClass('closed').addClass('open');
+		}
+
+		if (direction == "up") {
+			subMenus.removeClass('open closed').addClass('closed');
+			$('#qaSubMenu').removeClass('closed').addClass('open');
+		}
+
+	}, { offset: waypointOffset_subTitles });
+
+
+	var refH2 = $('#refContentTitle');
+	var refSectionCrossoverEls = $('#refContentTitle, .qaTitle');
+	var refHeaderTitle = $('.refTitle');
+
+
+	refH2.waypoint(function(direction) {
+
+		if (direction == "down") {
+			headerBgEl.removeClass(titleBGClasses).addClass('refBg');
+			refSectionCrossoverEls.removeClass('on').addClass('off');
+			refHeaderTitle.removeClass('off').addClass('on');
+		}
+
+		if (direction == "up") {
+			headerBgEl.removeClass(titleBGClasses).addClass('qaBg');
+			refSectionCrossoverEls.removeClass('off').addClass('on');
+			refHeaderTitle.removeClass('on').addClass('off');		
+		}
+
+	}, { offset: waypointOffset_header });
+
 
 
 
